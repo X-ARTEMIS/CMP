@@ -13,7 +13,6 @@ class cmp {
 		std::string action;
 		bool running = true;
 		std::vector<std::string> files;
-		bool technicaldebt = false;
 		int index;
 
 		struct {
