@@ -33,8 +33,6 @@ class cmp {
 			std::filesystem::create_directory(folder);
 
 			while (running == true) {
-				technicaldebt = false;
-
 				std::getline(std::cin, action);
 				std::transform(action.begin(), action.end(), action.begin(), [](unsigned char c) { return std::tolower(c); });
 
