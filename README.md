@@ -1,3 +1,5 @@
 rewrite of PMP in C++
 
-not done yet
+someone test this and make sure it works
+
+only supports windows
