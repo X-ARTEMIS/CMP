@@ -94,8 +94,7 @@ class cmp {
 				}
 
 				else if (action == "folder") {
-					std::cout << "Open " << folder << " in file explorer and place your files\n";
-					std::cout << "Ensure you run list again once adding a file\n";
+					std::cout << "Open " << folder << " in file explorer and place your files (Does not support mp4 becausae SFML)\n";
 				}
 
 				else if (action == "debug") {
