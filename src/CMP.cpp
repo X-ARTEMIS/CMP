@@ -99,22 +99,20 @@ class cmp {
 				}
 
 				else if (action == "debug") {
+					updateVector();
+
 					for (std::string item : files) {
 						std::cout << item << '\n';
 					}
 				}
 
+				else if (action == "update") {
+					updateVector();
+				}
+
 				else {
 					std::cout << "Invalid command\n";
 				}
-			}
-			return;
-		}
-
-		void updateVector() {
-			files.clear();
-			for (const auto& file : std::filesystem::directory_iterator(folder)) {
-				files.push_back(file.path().string());
 			}
 			return;
 		}
@@ -124,4 +122,12 @@ int main() {
 	cmp main;
 	main.run();
 	return 0;
+}
+
+void cmp::updateVector() {
+	files.clear();
+	for (const auto& file : std::filesystem::directory_iterator(folder)) {
+		files.push_back(file.path().string()); // this only exists because the compiler was being weird and not letting me link it if it was inside the class
+	}
+	return;
 }
