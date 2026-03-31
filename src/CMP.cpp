@@ -21,7 +21,7 @@ class cmp {
 			std::string exit = "exit\nPARAMETERS N/A\nExits the program\n\n";
 			std::string help = "it's literally what you're doing\n\n";
 			std::string folder = "folder\nPARAMETERS N/A\nInstructs you how to open the folder\n\n";
-			std::string play = "play\nPARAMETERS {index}\nPlays audio\n\n";
+			std::string play = "play\nPARAMETERS {index}\nPlays audio\nSupports .wav, .ogg, .flac\n\n";
 		} help;
 
 		void updateVector();
