@@ -118,8 +118,11 @@ class cmp {
 };
 
 int main() {
+	std::cout << "CMP\n";
+	std::cout << "=======================================\n";
 	cmp main;
 	main.run();
+	std::cout << "=======================================\n";
 	return 0;
 }
 
