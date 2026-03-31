@@ -14,6 +14,7 @@ class cmp {
 		bool running = true;
 		std::vector<std::string> files;
 		int index;
+		std::string folder;
 
 		struct {
 			std::string list = "list\nPARAMETERS N/A\nLists all files in CMP directory\n\n";
@@ -22,6 +23,8 @@ class cmp {
 			std::string folder = "folder\nPARAMETERS N/A\nInstructs you how to open the folder\n\n";
 			std::string play = "play\nPARAMETERS {index}\nPlays audio\n\n";
 		} help;
+
+		void updateVector();
 
 		void run() {
 
@@ -41,10 +44,7 @@ class cmp {
 				}
 
 				else if (action == "list") {
-					files.clear();
-					for (const auto& file : std::filesystem::directory_iterator(folder)) {
-						files.push_back(file.path().string());
-					}
+					updateVector();
 
 					for (std::string item : files) {
 						std::cout << item << '\n';
@@ -60,7 +60,10 @@ class cmp {
 				}
 
 				else if (action == "play") {
+					updateVector(); 
+
 					std::cout << "Enter the index of the file you wish to play\n";
+
 					for (int i = 0; i < files.size()/sizeof(std::string); i++) {
 						std::cout << i << ': ' << folder;
 					}
@@ -76,6 +79,7 @@ class cmp {
 						else {
 							music.play();
 
+							std::cout << "Started playing\n";
 							while (music.getStatus() == sf::Sound::Status::Playing) {
 								Sleep(100);
 							}
@@ -104,6 +108,15 @@ class cmp {
 					std::cout << "Invalid command\n";
 				}
 			}
+			return;
+		}
+
+		void updateVector() {
+			files.clear();
+			for (const auto& file : std::filesystem::directory_iterator(folder)) {
+				files.push_back(file.path().string());
+			}
+			return;
 		}
 };
 
@@ -112,5 +125,3 @@ int main() {
 	main.run();
 	return 0;
 }
-
-// somebody test this
