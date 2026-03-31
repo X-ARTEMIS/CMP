@@ -73,7 +73,7 @@ class cmp {
 						sf::Music music;
 						if (!music.openFromFile(files[index])) {
 							std::cout << "failed to load audio\n";
-							return;
+							continue;
 						}
 
 						else {
