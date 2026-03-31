@@ -129,7 +129,7 @@ int main() {
 void cmp::updateVector() {
 	files.clear();
 	for (const auto& file : std::filesystem::directory_iterator(folder)) {
-		files.push_back(file.path().string()); // this only exists because the compiler was being weird and not letting me link it if it was inside the class
+		files.push_back(file.path().string()); // this only exists because the compiler was being weird and not letting me link it if it was inside the class I probably messed something up
 	}
 	return;
 }
